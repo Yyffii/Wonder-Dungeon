@@ -35,7 +35,7 @@ int demoObjMap[mapX][mapY] =
     {
         {0, 0, 0, 0, 0, 0},
         {0, 3, 0, 0, 0, 0},
-        {0, 5, 0, 0, 0, 0},
+        {0, 4, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0},
         {0, 1, 0, 0, 2, 0},
         {0, 0, 0, 0, 0, 0},
@@ -63,6 +63,25 @@ enum tileList
     vert,
     horz,
     nothing,
+};
+
+int tileWall = 1;
+int tileNothing = 99;
+
+enum tileObj
+{
+    tileNone,
+    tileHealth,
+    tileShop,
+    tileDoor,
+    tileSign
+};
+
+enum mapSprite
+{
+    mapHealth,
+    mapShop,
+    mapDoor,
 };
 
 // tile types

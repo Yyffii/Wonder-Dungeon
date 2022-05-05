@@ -374,11 +374,11 @@ int main(void)
                             tileType = closeright;
                         }
 
-                        if (cellType == 1)
+                        if (cellType == tileWall)
                         {
                             tileType = block;
                         }
-                        if (cellType == 99)
+                        if (cellType == tileNothing)
                         {
                             tileType = nothing;
                         }
@@ -391,23 +391,19 @@ int main(void)
                         }
 
                         // draw objects
-                        if (objMap[j][i] == 1)
+                        if (objMap[j][i] == tileHealth)
                         {
-                            mapObjRec.x = mapObjAtlas.width / 3 * 0;
+                            mapObjRec.x = mapObjAtlas.width / 3 * mapHealth;
                             DrawTextureRec(mapObjAtlas, mapObjRec, gridToMap(i, j), WHITE);
                         }
-                        else if (objMap[j][i] == 2)
+                        else if (objMap[j][i] == tileShop)
                         {
-                            mapObjRec.x = mapObjAtlas.width / 3 * 1;
+                            mapObjRec.x = mapObjAtlas.width / 3 * mapShop;
                             DrawTextureRec(mapObjAtlas, mapObjRec, gridToMap(i, j), WHITE);
                         }
-                        else if (objMap[j][i] == 3)
+                        else if (objMap[j][i] == tileDoor)
                         {
-                            mapObjRec.x = mapObjAtlas.width / 3 * 2;
-                            DrawTextureRec(mapObjAtlas, mapObjRec, gridToMap(i, j), WHITE);
-                        } else if (objMap[j][i] == 4)
-                        {
-                            mapObjRec.x = mapObjAtlas.width / 3 * 2;
+                            mapObjRec.x = mapObjAtlas.width / 3 * mapDoor;
                             DrawTextureRec(mapObjAtlas, mapObjRec, gridToMap(i, j), WHITE);
                         }
                     }
